@@ -1,0 +1,4 @@
+{
+  "production": ["ionic/js/ionic.bundle.min.js", "ionic/fonts/*"],
+  "dev": ["ionic/js/ionic.bundle.js", "ionic/fonts/*"]
+}
