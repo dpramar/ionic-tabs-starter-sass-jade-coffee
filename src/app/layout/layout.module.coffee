@@ -1,3 +1,4 @@
-'use strict'
+do ->
+  'use strict'
 
-angular.module 'starter.layout', []
+  angular.module 'starter.layout', []
