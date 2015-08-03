@@ -83,11 +83,12 @@ gulp.task 'index', ->
     .pipe gulp.dest paths.dest
 
 gulp.task 'clean', (done) ->
+  cache.caches = {}
   del [paths.dest], done
 
 gulp.task 'sass-watch', ['sass'], -> browserSync.reload()
-gulp.task 'coffee-watch', ['coffee'], -> browserSync.reload()
 gulp.task 'jade-watch', ['jade'], -> browserSync.reload()
+gulp.task 'coffee-watch', ['coffee']
 
 gulp.task 'serve', ->
   browserSync.init
@@ -95,8 +96,12 @@ gulp.task 'serve', ->
       baseDir: 'www'
 
   gulp.watch paths.sass, ['sass-watch']
-  gulp.watch paths.coffee, ['coffee-watch']
   gulp.watch paths.jade, ['jade-watch']
+  gulp.watch paths.coffee, (event) ->
+    if event.type is 'added' or event.type is 'deleted'
+      runSequence 'coffee-watch', 'index'
+    else runSequence 'coffee-watch'
+    browserSync.reload()
 
 gulp.task 'bowerInstall',  ->
   bower.commands.install()
