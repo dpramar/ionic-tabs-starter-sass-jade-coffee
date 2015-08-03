@@ -1,22 +1,21 @@
-do ->
-  'use strict'
+'use strict'
 
-  appRun = (routerHelper) ->
-    routerHelper.configureStates getStates(), '/tab/dash'
+appRun = (routerHelper) ->
+  routerHelper.configureStates getStates(), '/tab/dash'
 
-  getStates = ->
-    [
-      state: 'tab.account'
-      config:
-        url: '/account'
-        views:
-          'tab-account':
-            templateUrl: 'account/tab-account.html'
-            controller: 'AccountCtrl'
-    ]
+getStates = ->
+  [
+    state: 'tab.account'
+    config:
+      url: '/account'
+      views:
+        'tab-account':
+          templateUrl: 'account/tab-account.html'
+          controller: 'AccountCtrl'
+  ]
 
-  appRun.$inject = ['routerHelper']
+appRun.$inject = ['routerHelper']
 
-  angular
-    .module 'starter.account'
-    .run appRun
+angular
+  .module 'starter.account'
+  .run appRun

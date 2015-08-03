@@ -61,7 +61,7 @@ gulp.task 'coffee', ->
   gulp.src paths.coffee
     .pipe coffeelint()
     .pipe coffeelint.reporter coffeStylish
-    .pipe coffee(bare: true).on('error', gutil.log)
+    .pipe coffee().on('error', gutil.log)
     .pipe if argv.production then uglify() else gutil.noop()
     .pipe gulp.dest(paths.dest)
 
