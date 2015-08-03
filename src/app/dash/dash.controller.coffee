@@ -1,9 +1,10 @@
-'use strict'
+do ->
+  'use strict'
 
-DashCtrl = ($log) ->
-  $log.info "Creating DashCtrl"
+  DashCtrl = ($log) ->
+    $log.info "Creating DashCtrl"
 
-DashCtrl.$inject = ['$log']
+  DashCtrl.$inject = ['$log']
 
-angular.module 'starter.dash'
-  .controller 'DashCtrl', DashCtrl
+  angular.module 'starter.dash'
+    .controller 'DashCtrl', DashCtrl

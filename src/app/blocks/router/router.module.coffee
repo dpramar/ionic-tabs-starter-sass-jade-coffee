@@ -1,3 +1,4 @@
-'use strict'
+do ->
+  'use strict'
 
-angular.module 'blocks.router', []
+  angular.module 'blocks.router', []

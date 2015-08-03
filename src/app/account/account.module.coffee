@@ -1,3 +1,4 @@
-'use strict'
+do ->
+  'use strict'
 
-angular.module 'starter.account', []
+  angular.module 'starter.account', []

@@ -1,11 +1,12 @@
-'use strict'
+do ->
+  'use strict'
 
-ChatDetailCtrl = ($log, $scope, $stateParams, Chats) ->
-  $log.info "Creating ChatDetailCtrl"
+  ChatDetailCtrl = ($log, $scope, $stateParams, Chats) ->
+    $log.info "Creating ChatDetailCtrl"
 
-  $scope.chat = Chats.get $stateParams.chatId
+    $scope.chat = Chats.get $stateParams.chatId
 
-ChatDetailCtrl.$inject = ['$log', '$scope', '$stateParams', 'Chats']
+  ChatDetailCtrl.$inject = ['$log', '$scope', '$stateParams', 'Chats']
 
-angular.module 'starter.chat'
-  .controller 'ChatDetailCtrl', ChatDetailCtrl
+  angular.module 'starter.chat'
+    .controller 'ChatDetailCtrl', ChatDetailCtrl
